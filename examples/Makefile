@@ -16,6 +16,9 @@ blink: $(OBJS) blink.c
 
 read: $(OBJS) read.c
 	$(GCC) $(CFLAGS) -o $@ $(patsubst %,%.c,$@) $(OBJS)
+	
+i2c_spi: $(OBJS) i2c_spi.c
+	$(GCC) $(CFLAGS) -o $@ $(patsubst %,%.c,$@) $(OBJS)
 
 interrupt: $(OBJS) interrupt.c
 	$(GCC) $(CFLAGS) -o $@ $(patsubst %,%.c,$@) $(OBJS) -pthread

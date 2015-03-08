@@ -112,7 +112,7 @@ static int hummingboardPinMode(int pin, int direction) {
 	}
 
 	if(hummingboardValidGPIO(pin) != 0) {
-		wiringXLog(LOG_ERR, "hummingboard->pinMode: Invalid pin number %d (0 >= pin <= 7)", pin);
+		wiringXLog(LOG_ERR, "hummingboard->pinMode: Invalid pin number %d", pin);
 		return -1;
 	}
 
@@ -176,7 +176,7 @@ static int hummingboardDigitalWrite(int pin, int value) {
 	}
 
 	if(hummingboardValidGPIO(pin) != 0) {
-		wiringXLog(LOG_ERR, "hummingboard->digitalWrite: Invalid pin number %d (0 >= pin <= 7)", pin);
+		wiringXLog(LOG_ERR, "hummingboard->digitalWrite: Invalid pin number %d", pin);
 		return -1;
 	}
 
@@ -196,7 +196,7 @@ static int hummingboardDigitalRead(int pin) {
 	}
 
 	if(hummingboardValidGPIO(pin) != 0) {
-		wiringXLog(LOG_ERR, "hummingboard->digitalRead: Invalid pin number %d (0 >= pin <= 7)", pin);
+		wiringXLog(LOG_ERR, "hummingboard->digitalRead: Invalid pin number %d", pin);
 		return -1;
 	}
 
@@ -215,7 +215,7 @@ static int hummingboardISR(int pin, int mode) {
 	FILE *f = NULL;
 
 	if(hummingboardValidGPIO(pin) != 0) {
-		wiringXLog(LOG_ERR, "hummingboard->isr: Invalid pin number %d (0 >= pin <= 7)", pin);
+		wiringXLog(LOG_ERR, "hummingboard->isr: Invalid pin number %d", pin);
 		return -1;
 	}
 

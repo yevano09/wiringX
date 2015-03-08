@@ -231,7 +231,7 @@ static int bananapiISR(int pin, int mode) {
 	}
 
 	if(edge[npin] == -1) {
-		wiringXLog(LOG_ERR, "bananapi->isr: Invalid GPIO: %d", pin);
+		wiringXLog(LOG_ERR, "bananapi->isr: Invalid pin number: %d", pin);
 		return -1;
 	}
 

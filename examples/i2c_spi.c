@@ -44,10 +44,12 @@ void clearDisplaySPI() {
 	unsigned char spi_data[1] = {0x76};
 	wiringXSPIDataRW(SPI_CHAN, spi_data, 1);  // Clear display command
 }
+
 void setCursorSPI() {
 	unsigned char spi_data[2] = {0x79, 0x00};
 	wiringXSPIDataRW(SPI_CHAN, spi_data, 2);  // set cursor command
 }
+
 void setDecimalsSPI(unsigned char decimals) {
 	unsigned char spi_data[2] = {0x77, decimals};
 	wiringXSPIDataRW(SPI_CHAN, spi_data, 2);

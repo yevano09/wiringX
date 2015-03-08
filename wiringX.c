@@ -36,6 +36,7 @@
 #include "bananapi.h"
 #include "radxa.h"
 #include "ci20.h"
+#include "odroid.h"
 
 static struct platform_t *platform = NULL;
 static int setup = -2;
@@ -417,6 +418,7 @@ int wiringXSetup(void) {
 		raspberrypiInit();
 		bananapiInit();
 		ci20Init();
+		odroidInit();
 
 		int match = 0;
 		struct platform_t *tmp = platforms;

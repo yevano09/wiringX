@@ -5,7 +5,7 @@ from distutils.command.build_ext import build_ext as _build_ext
 import sys
 
 modules = [
-	Extension('wiringX.gpio', sources=['wiringX/wiringx.c', '../wiringX.c', '../hummingboard.c', '../bananapi.c', '../radxa.c', '../raspberrypi.c', '../ci20.c'], include_dirs=['../'], extra_compile_args=['-Wformat=0']),
+	Extension('wiringX.gpio', sources=['wiringX/wiringx.c', '../wiringX.c', '../hummingboard.c', '../bananapi.c', '../radxa.c', '../raspberrypi.c', '../ci20.c', '../odroid.c'], include_dirs=['../'], extra_compile_args=['-Wformat=0']),
 ]
 
 setup(

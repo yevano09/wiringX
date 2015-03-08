@@ -319,7 +319,7 @@ static int radxaISR(int pin, int mode) {
 	FILE *f = NULL;
 
 	if(pin < 0 || pin > 35) {
-		wiringXLog(LOG_ERR, "radxa->isr: Invalid pin number %d (0 >= pin <= 35)", pin);
+		wiringXLog(LOG_ERR, "radxa->isr: Invalid pin number %d", pin);
 		return -1;
 	}
 
@@ -437,7 +437,7 @@ static int radxaWaitForInterrupt(int pin, int ms) {
 	struct pollfd polls;
 
 	if(pin < 0 || pin > 35) {
-		wiringXLog(LOG_ERR, "radxa->waitForInterrupt: Invalid pin number %d (0 >= pin <= 35)", pin);
+		wiringXLog(LOG_ERR, "radxa->waitForInterrupt: Invalid pin number %d", pin);
 		return -1;
 	}
 
@@ -586,7 +586,7 @@ static int radxaDigitalRead(int pin) {
 	int offset = pinToGPIO[pin] - bank->pin_base;
 
 	if(pin < 0 || pin > 35) {
-		wiringXLog(LOG_ERR, "radxa->digitalRead: Invalid pin number %d (0 >= pin <= 35)", pin);
+		wiringXLog(LOG_ERR, "radxa->digitalRead: Invalid pin number %d", pin);
 		return -1;
 	}
 
@@ -625,7 +625,7 @@ static int radxaDigitalWrite(int pin, int value) {
 	int offset = pinToGPIO[pin] - bank->pin_base;
 
 	if(pin < 0 || pin > 35) {
-		wiringXLog(LOG_ERR, "radxa->digitalWrite: Invalid pin number %d (0 >= pin <= 35)", pin);
+		wiringXLog(LOG_ERR, "radxa->digitalWrite: Invalid pin number %d)", pin);
 		return -1;
 	}
 
@@ -662,7 +662,7 @@ static int radxaPinMode(int pin, int mode) {
 	unsigned int data;
 
 	if(pin < 0 || pin > 35) {
-		wiringXLog(LOG_ERR, "radxa->pinMode: Invalid pin number %d (0 >= pin <= 35)", pin);
+		wiringXLog(LOG_ERR, "radxa->pinMode: Invalid pin number %d", pin);
 		return -1;
 	}
 

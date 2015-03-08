@@ -245,7 +245,7 @@ static int ci20ISR(int pin, int mode) {
 	FILE *f = NULL;
 
 	if(ci20ValidGPIO(pin) != 0) {
-		wiringXLog(LOG_ERR, "ci20->isr: Invalid pin number %d (0 >= pin <= 31)", pin);
+		wiringXLog(LOG_ERR, "ci20->isr: Invalid pin number %d", pin);
 		return -1;
 	}	
 
@@ -348,7 +348,7 @@ static int ci20WaitForInterrupt(int pin, int ms) {
 	struct pollfd polls;
 
 	if(ci20ValidGPIO(pin) != 0) {
-		wiringXLog(LOG_ERR, "ci20->waitForInterrupt: Invalid pin number %d (0 >= pin <= 31)", pin);
+		wiringXLog(LOG_ERR, "ci20->waitForInterrupt: Invalid pin number %d", pin);
 		return -1;
 	}
 
