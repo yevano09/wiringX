@@ -346,7 +346,7 @@ static int odroidPinMode(int pin, int mode) {
 		if(mode == INPUT) {
 			*(gpio + gpioToGPFSELReg(pin)) = (*(gpio + gpioToGPFSELReg(pin)) |  (1 << gpioToShiftReg(pin)));   
 		} else if(mode == OUTPUT) {
-			*(gpio + fSel) = (*(gpio + fSel) & ~(7 << shift));
+			*(gpio + gpioToGPFSELReg(pin)) = (*(gpio + gpioToGPFSELReg(pin)) & ~(1 << gpioToShiftReg(pin)));
 		}
 	}
 	return 0;
