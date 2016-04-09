@@ -67,6 +67,22 @@ static PyObject *py_digitalWrite(PyObject *self, PyObject *args) {
 	Py_RETURN_NONE;
 }
 
+static PyObject *py_analogRead(PyObject *self,PyObject *args){
+
+	int  gpio = 0, ret = 0;
+
+	if(!PyArg_ParseTuple(args, "i", &gpio)) {
+		return NULL;
+	}
+	ret =  wiringXAnalogRead(gpio);
+	if ( ret < 0 )
+		return PyErr_SetFromErrno(PyExc_IOError);
+	
+	return  Py_BuildValue("i", ret );
+	
+
+}
+
 static PyObject *py_digitalRead(PyObject *self, PyObject *args) {
 	int gpio = 0, ret = 0;
 
@@ -326,6 +342,7 @@ static PyMethodDef module_methods[] = {
     {"pinMode", py_pinMode, METH_VARARGS,	"Set pin mode"},
     {"digitalWrite", py_digitalWrite, METH_VARARGS,	"Set output state"},
     {"digitalRead", py_digitalRead, METH_VARARGS,	"Read input state"},
+    {"analogRead", py_analogRead, METH_VARARGS,		"Read Analog state"},
     {"valid", py_validGPIO, METH_VARARGS,	"Check if GPIO is valid"},
     {"gc", py_gc, METH_NOARGS, "Garbage collect wiringX"},
     {"platform", py_platform, METH_NOARGS, "Get platform we're running on"},
