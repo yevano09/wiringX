@@ -1,6 +1,7 @@
 This package export all wiringX function to python.
 
 To generate and install the python-wiringx run the following commands.
+```
 mkdir build
 cd build
 cmake ..
@@ -11,7 +12,7 @@ dpkg -i python-wiringx*.deb
 #Red-Hat based:
 cpack -G RPM
 rpm -i python-wiringx*.rpm
-
+```
 On Arch Linux ARM, install "python-wiringx-git" or "python2-wiringx-git" via Pacman
 
 To import:
@@ -22,6 +23,7 @@ Function list:
 - gpio.pinMode(pin, mode)
 - gpio.digitalWrite(pin, state)
 - gpio.digitalRead(pin)
+- gpio.analogRead(pin)
 - gpio.valid(pin)
 - gpio.gc()
 - gpio.platform()
